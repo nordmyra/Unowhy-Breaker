@@ -1,0 +1,21 @@
+{
+    "appId": "fr.sweven.unowhy-breaker",
+    "productName": "Unowhy Breaker",
+    "directories": {
+        "buildResources": "build"
+    },
+    "asar": false,
+    "copyright": "© 2024 Wyatt Woodruff (Sweven)",
+    "win": {
+        "target": [
+            {
+                "target": "portable",
+                "arch": [
+                    "x64",
+                    "arm64"
+                ]
+            }
+        ],
+        "icon": "symbol/icon.png"
+    }
+}

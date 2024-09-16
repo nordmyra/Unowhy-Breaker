@@ -1,0 +1,17 @@
+{
+  "name": "unowhy-breaker",
+  "version": "0.0.1-alpha",
+  "description": "a simple tool to break unowhy with bootable usb",
+  "main": "app.js",
+  "scripts": {
+    "buildW": "electron-builder build -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sweven",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.1.0",
+    "electron-builder": "^25.0.5",
+    "electronmon": "^2.0.3"
+  }
+}
