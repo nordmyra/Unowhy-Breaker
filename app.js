@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require("electron")
-const { execSync, exec } = require("node:child_process")
+const { exec } = require("node:child_process")
 const path = require("node:path")
 let win
 

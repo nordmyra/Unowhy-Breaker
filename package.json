@@ -12,6 +12,8 @@
   "devDependencies": {
     "electron": "^32.1.0",
     "electron-builder": "^25.0.5",
-    "electronmon": "^2.0.3"
+    "electronmon": "^2.0.3",
+    "express": "^4.21.0",
+    "rcedit": "^4.0.1"
   }
 }

@@ -16,6 +16,10 @@
                 ]
             }
         ],
-        "icon": "symbol/icon.png"
+        "icon": "symbol/icon.png",
+        "files": [
+            "!buildServerExecutable.js",
+            "!server.js"
+        ]
     }
 }
