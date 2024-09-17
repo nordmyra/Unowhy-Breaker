@@ -1,50 +1,22 @@
-const { exec } = require("node:child_process")
-const path = require("node:path")
-const rcedit = require("rcedit")
-const fs = require("fs")
+const { compile } = require("nexe")
+const path = require("path")
 
-function runCommand(command, cwd) {
-    return new Promise((resolve, reject) => {
-        exec(command, { cwd } , (error, stdout, stderr) => {
-            if (error) {
-                console.error(`Error: ${error.message}`)
-                reject(error)
-                return
-            }
-            if (stderr) {
-                console.error(`Standard Error: ${stderr}`)
-                reject(stderr)
-                return
-            }
-            console.log(`Output: ${stdout}`)
-            resolve(stdout)
-        })
-    })
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-async function build() {
+async function main() {
     try {
-        await runCommand(`pkg server.js -t node16-win-x64 --out-path "${path.join(__dirname, "pkg-dist")}"`)
-        await sleep(2000)
-        await runCommand(`move "${path.join(__dirname, "pkg-dist", "server.exe")}" "${path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe")}"`)
-        rcedit(path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe"), {
-            icon: path.join(__dirname, "symbol", "icon.ico")
+        await compile({
+            input: path.join(__dirname, "server.js"),
+            ico: path.join(__dirname, "symbol", "icon.ico"),
+            build: true,
+            targets: [
+                {
+                    platform: "windows",
+                    arch: "x64"
+                }
+            ]
         })
     } catch (error) {
-        if (fs.existsSync(path.join(__dirname, "pkg-dist", "server.exe"))) {
-            await sleep(2000)
-            await runCommand(`move "${path.join(__dirname, "pkg-dist", "server.exe")}" "${path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe")}"`)
-            rcedit(path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe"), {
-                icon: path.join(__dirname, "symbol", "icon.ico")
-            })
-        } else {
-            console.log(error)
-        }
+        console.log(error)
     }
 }
 
-build()
+main()

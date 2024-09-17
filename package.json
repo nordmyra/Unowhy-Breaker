@@ -14,6 +14,6 @@
     "electron-builder": "^25.0.5",
     "electronmon": "^2.0.3",
     "express": "^4.21.0",
-    "rcedit": "^4.0.1"
+    "nexe": "^4.0.0-rc.6"
   }
 }
