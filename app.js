@@ -52,31 +52,9 @@ app.on("browser-window-created", (event, window) => {
 
 ipcMain.on("action", async (event, data) => {
     switch (data.action) {
-        case "openCMD":
-            try {
-                await runCommand("start cmd", "C:\\Windows\\System32\\")
-            } catch (error) {
-                console.log(error)
-            }
-            break
-        case "openRegEdit":
-            try {
-                await runCommand("start regedit", "C:\\Windows\\System32\\")
-            } catch (error) {
-                console.log(error)
-            }
-            break
         case "exit":
             try {
                 await runCommand("wpeutil reboot", "X:\\Program Files\\Unowhy Breaker")
-            } catch (error) {
-                console.log(error)
-            }
-            break
-        case "removeHiSqool":
-            try {
-                await runCommand("rmdir /s /q  \"Unowhy\"", "C:\\Program Files")
-                win.webContents.executeJavaScript("alert('HiSqool Supprimé !')")
             } catch (error) {
                 console.log(error)
             }
