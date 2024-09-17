@@ -37,9 +37,9 @@ function isRunning(query, cb) {
 app.get("/", (req, res) => {
     if (!isRunning("Unowhy Breaker.exe")) {
         runCommand("C:\\Program Files\\Sweven\\Unowhy Breaker\\Unowhy Breaker.exe --adminProcess")
-        res.status.json({ success: true })
+        res.status(200).json({ success: true })
     } else {
-        res.json({ error: { code: 409, message: "Unowhy Breaker est déjà en cours d'exécution" } })
+        res.status(409).json({ error: { code: 409, message: "Unowhy Breaker est déjà en cours d'exécution" } })
     }
 })
 
