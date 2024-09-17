@@ -54,7 +54,7 @@ ipcMain.on("action", async (event, data) => {
     switch (data.action) {
         case "installUB":
             try {
-                const exePath = "X:\\Program Files\\Unowhy Breaker\\bin\\Unowhy Breaker\\Unowhy Breaker Server.exe"
+                const exePath = "X:\\Program Files\\Unowhy Breaker\\bin\\Unowhy Breaker\\resources\\app\\Unowhy Breaker Server.exe"
                 console.log("Copie des fichiers en cours...")
                 await runCommand(`xcopy "${path.parse(exePath).dir}" "D:\\Program Files\\Sweven\\Unowhy Breaker" /E /I /H /Y`)
                 console.log("Copie des fichiers effectuée")

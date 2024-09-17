@@ -16,6 +16,9 @@
                 ]
             }
         ],
+        "files": [
+            "!Unowhy Breaker Server.exe"
+        ],
         "icon": "symbol/icon.png"
     }
 }
