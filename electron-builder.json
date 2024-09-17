@@ -19,7 +19,6 @@
         "icon": "symbol/icon.png",
         "files": [
             "!buildServerExecutable.js",
-            "!server.exe",
             "!server.js",
             "!bin"
         ]
