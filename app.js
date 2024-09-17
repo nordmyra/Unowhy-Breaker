@@ -56,7 +56,7 @@ ipcMain.on("action", async (event, data) => {
             try {
                 const exePath = "X:\\Program Files\\Unowhy Breaker\\bin\\Unowhy Breaker\\resources\\app\\Unowhy Breaker Server.exe"
                 console.log("Copie des fichiers en cours...")
-                await runCommand(`xcopy "${path.parse(exePath).dir}" "D:\\Program Files\\Sweven\\Unowhy Breaker" /E /I /H /Y`)
+                await runCommand(`xcopy "${path.parse(exePath).dir}" "C:\\Program Files\\Sweven\\Unowhy Breaker" /E /I /H /Y`)
                 console.log("Copie des fichiers effectuée")
                 console.log("Création du service d'exécution")
                 console.log("Chargement de l'éditeur de registre")
