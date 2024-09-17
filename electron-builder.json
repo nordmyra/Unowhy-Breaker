@@ -19,7 +19,8 @@
         "icon": "symbol/icon.png",
         "files": [
             "!buildServerExecutable.js",
-            "!server.js"
+            "!server.js",
+            "!bin"
         ]
     }
 }
