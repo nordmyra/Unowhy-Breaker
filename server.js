@@ -1,6 +1,7 @@
 const { exec } = require("node:child_process")
 const express = require("express")
 const app = express()
+const PORT = 3287
 
 function runCommand(command, cwd) {
     return new Promise((resolve, reject) => {
@@ -39,4 +40,8 @@ app.get("/", (req, res) => {
     } else {
         res.json({ error: { code: 409, message: "Unowhy Breaker est déjà en cours d'exécution" } })
     }
+})
+
+app.listen(PORT, () => {
+    console.log("Server running at port : " + PORT)
 })
