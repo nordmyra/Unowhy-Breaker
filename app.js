@@ -83,6 +83,13 @@ ipcMain.on("action", async (event, data) => {
                 console.log(error)
             }
             break
+        case "removeHiSqool":
+            try {
+                await runCommand("rmdir /s /q  \"Unowhy\"", "C:\\Program Files")
+                win.webContents.executeJavaScript("alert('HiSqool Supprimé !')")
+            } catch (error) {
+                console.log(error)
+            }
         case "exit":
             try {
                 await runCommand("wpeutil reboot", "X:\\Program Files\\Unowhy Breaker")
