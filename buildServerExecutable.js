@@ -1,6 +1,7 @@
 const { exec } = require("node:child_process")
 const path = require("node:path")
 const rcedit = require("rcedit")
+const fs = require("fs")
 
 function runCommand(command, cwd) {
     return new Promise((resolve, reject) => {
@@ -29,7 +30,14 @@ async function build() {
             icon: path.join(__dirname, "symbol", "icon.ico")
         })
     } catch (error) {
-        console.log(error)
+        if (fs.existsSync(path.join(__dirname, "pkg-dist", "server.exe"))) {
+            await runCommand(`move "${path.join(__dirname, "pkg-dist", "server.exe")}" "${path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe")}"`)
+            rcedit(path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe"), {
+                icon: path.join(__dirname, "symbol", "icon.ico")
+            })
+        } else {
+            console.log(error)
+        }
     }
 }
 
