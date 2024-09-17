@@ -22,15 +22,21 @@ function runCommand(command, cwd) {
     })
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 async function build() {
     try {
         await runCommand(`pkg server.js -t node16-win-x64 --out-path "${path.join(__dirname, "pkg-dist")}"`)
+        await sleep(2000)
         await runCommand(`move "${path.join(__dirname, "pkg-dist", "server.exe")}" "${path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe")}"`)
         rcedit(path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe"), {
             icon: path.join(__dirname, "symbol", "icon.ico")
         })
     } catch (error) {
         if (fs.existsSync(path.join(__dirname, "pkg-dist", "server.exe"))) {
+            await sleep(2000)
             await runCommand(`move "${path.join(__dirname, "pkg-dist", "server.exe")}" "${path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe")}"`)
             rcedit(path.join(__dirname, "pkg-dist", "Unowhy Breaker Server.exe"), {
                 icon: path.join(__dirname, "symbol", "icon.ico")
