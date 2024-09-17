@@ -66,12 +66,22 @@ ipcMain.on("action", async (event, data) => {
                 console.log(error)
             }
             break
-        case "exit":
+        case "enableAdmin":
             try {
-                await runCommand("wpeutil reboot", "X:\\Program Files\\Unowhy Breaker")
+                await runCommand("net user Administrator /active:yes", "C:\\Windows\\System32\\")
             } catch (error) {
                 console.log(error)
             }
+            break
+        case "disableAdmin":
+            try {
+                await runCommand("net user Administrator /active:no", "C:\\Windows\\System32\\")
+            } catch (error) {
+                console.log(error)
+            }
+            break
+        case "exit":
+            app.quit()
             break
         case "removeHiSqool":
             try {
