@@ -1,5 +1,5 @@
 # Comment construire le et utilisé le projet ?
-**⚠️ IMPORTANT : Ce projet est destiné à l'utilisation sur des ordinnateurs Unowhy, il doit être utilisé dans un Environement Windows PE et construit dans un environement Windows 10/11**
+**⚠️ IMPORTANT : Ce projet est destiné à l'utilisation sur des ordinnateurs Unowhy, il doit être utilisé dans un Environnement Windows PE et construit dans un environnement Windows 10/11**
 ## Première étape : Construire l'application electron
 ### Prérequis
 - `Node.JS@v16.14.2`
