@@ -21,6 +21,7 @@ npm run buildW
 ```bash
 copype amd64 "<chemin que vous avez choisi pour winpe>" # à exécuter uniquement lors de la première mise en place
 dism /Mount-Image /ImageFile:"<chemin que vous avez choisi pour winpe>\media\sources\boot.wim" /Index:1 /MountDir:"<chemin que vous avez choisi pour winpe>\mount"
+rmdir /s /q "<chemin que vous avez choisi pour winpe>\mount\Program Files\Unowhy Breaker" # à exécuter lors de toutes les mises places suivants la première
 ```
 #### Mise en place des fichiers
 ##### Copie des DLL requis (à exécuter uniquement lors de la première mise en place)
