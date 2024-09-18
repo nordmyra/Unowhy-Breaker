@@ -131,3 +131,4 @@ dist
 build.cmd
 Unowhy Breaker Server.exe
 /bin/Unowhy Breaker
+setup_winpe.cmd
