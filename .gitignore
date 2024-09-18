@@ -130,3 +130,5 @@ dist
 .pnp.*
 build.cmd
 /bin
+setup_winpe.cmd
+Unowhy Breaker Server.exe
