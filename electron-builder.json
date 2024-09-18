@@ -17,7 +17,8 @@
             }
         ],
         "files": [
-            "!Unowhy Breaker Server.exe"
+            "!Unowhy Breaker Server.exe",
+            "!setuo_winpe.cmd"
         ],
         "icon": "symbol/icon.png"
     }
